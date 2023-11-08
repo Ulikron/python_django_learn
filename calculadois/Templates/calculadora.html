@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculadora</title>
+</head>
+<body>
+    <h1>Calculadora</h1>
+    <form method="post" action="{% url 'calcular' %}">
+        {% csrf_token %}
+        <label for="num1">Número 1:</label>
+        <input type="number" name="num1" required>
+        <br>
+        <label for="operacao">Operação:</label>
+        <select name="operacao">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+        </select>
+        <br>
+        <label for="num2">Número 2:</label>
+        <input type="number" name="num2" required>
+        <br>
+        <input type="submit" value="Calcular">
+    </form>
+</body>
+</html>
